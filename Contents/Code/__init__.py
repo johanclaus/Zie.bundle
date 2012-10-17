@@ -55,17 +55,10 @@ def Videos(category):
 	for video in XML.ElementFromURL(url).xpath('//item'):
 		url = video.xpath('./link')[0].text
 		title = video.xpath('./title')[0].text
-		Log("============================")
-		Log(title)
-		Log(url)
 		summary = video.xpath('./description')[0].text.split('\n')[0]
-		Log(summary)
 		pubDate = video.xpath('./pubDate')[0].text
-		Log(pubDate)
 		originally_available_at = Datetime.ParseDate(pubDate).date()
-		Log(originally_available_at)
 		thumb = video.xpath('./enclosure[@type="image/jpeg"]')[0].get('url')
-		Log(thumb)
 
 		oc.add(VideoClipObject(
 			url = url,

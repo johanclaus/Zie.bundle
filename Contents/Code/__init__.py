@@ -72,7 +72,7 @@ def Videos(category):
 			title = title,
 			summary = summary,
 			originally_available_at = originally_available_at,
-			thumb = Resource.ContentsOfURLWithFallback(url=thumb, fallback='icon-default.png')
+			thumb = Resource.ContentsOfURLWithFallback(url=thumb, fallback=ICON)
 		))
 
 	if len(oc) < 1:

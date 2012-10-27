@@ -46,7 +46,7 @@ def MainMenu():
 	return oc
 
 ####################################################################################################
-@route('/video/zie/videos/{category}')
+@route('/video/zie/videos/{category}', allow_sync=True)
 def Videos(category):
 
 	oc = ObjectContainer(title2=category, view_group='InfoList')
